@@ -10,30 +10,45 @@ public class Operaciones{
         return numero;
     }
     /**
-     * 
+     * Todos estos metodos devolveran su respectivo resultado dependiendo de los numeros y el operando introducido
      * @param valor1
      * @param valor2
      * @return numero
-     * Todos estos metodos devolveran su respectivo resultado dependiendo de los numeros y el operando introducido
+     * 
      */
     public int restar (int valor1, int valor2){
         int numero;
         numero = valor1 - valor2;
         return numero;
     }
-    
+    /**
+     * Todos estos metodos devolveran su respectivo resultado dependiendo de los numeros y el operando introducido
+     * @param valor1
+     * @param valor2
+     * @return ret
+     */
     public int multiplicar (int valor1, int valor2){
         int numero;
         numero = valor1 * valor2;
         return numero;
     }
-    
+    /**
+     * Todos estos metodos devolveran su respectivo resultado dependiendo de los numeros y el operando introducido
+     * @param valor1
+     * @param valor2
+     * @return ret
+     */
     public int dividir (int valor1, int valor2){
         int numero;
         numero = valor1 / valor2;
         return numero;
     }
-    
+    /**
+     * Todos estos metodos devolveran su respectivo resultado dependiendo de los numeros y el operando introducido
+     * @param valor1
+     * @param valor2
+     * @return ret
+     */
     public int resto (int valor1, int valor2){
         int numero;
         numero = valor1 % valor2;

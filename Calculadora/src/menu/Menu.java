@@ -1,4 +1,11 @@
 package menu;
+
+/**
+ * @author Robert_Rosu
+ * @version 1.0.0
+ * Pide por teclado dos numeros y un operando, luego devuelve el resultado y 
+ * pregunta si quieres repetir
+ */
 import java.util.Scanner;
 public class Menu {
     private static Scanner teclado = new Scanner(System.in);
@@ -11,7 +18,12 @@ public class Menu {
         ret [1] = teclado.nextInt();
         return ret;
     }
-    
+    /**
+     * 
+     * @return ret
+     * Metodo que se encarga de pedir el operando
+     * Devuelve el operando introducido
+     */
     public String menuOpciones() {
         String ret = "";
         do {
@@ -23,12 +35,16 @@ public class Menu {
                 ));
                 return ret;
     }
-    
+   /**
+    * 
+    * @return ret
+    * Metodo que pregunta si quieres repetir, mediante un booleano
+    */
     public boolean repetir(){
         boolean ret = false;
         String respuesta;
         do {
-            System.out.print ("¿Desea continuar trabajando con la calculadora? [s / n]");
+            System.out.print ("ï¿½Desea continuar trabajando con la calculadora? [s / n]");
             respuesta = teclado.next();
         } while (!((respuesta.equalsIgnoreCase("s")) || (respuesta.equalsIgnoreCase("n"))
                     ));

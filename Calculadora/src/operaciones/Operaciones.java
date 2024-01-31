@@ -1,9 +1,17 @@
 package operaciones;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
+
 /**
  * @author Robert_Rosu
  * @version 1.0.0
  */
 public class Operaciones{
+
     public int sumar (int valor1, int valor2){
         int numero;
         numero = valor1 + valor2;

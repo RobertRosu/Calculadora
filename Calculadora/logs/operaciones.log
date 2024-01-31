@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-01-31T12:48:27.384331300Z</date>
+  <millis>1706705307384</millis>
+  <nanos>331300</nanos>
+  <sequence>0</sequence>
+  <logger>Logger operaciones</logger>
+  <level>WARNING</level>
+  <class>principal.Calculadora</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>No se puede dividir entre 0</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-01-31T12:49:21.023375100Z</date>
+  <millis>1706705361023</millis>
+  <nanos>375100</nanos>
+  <sequence>0</sequence>
+  <logger>Logger operaciones</logger>
+  <level>FINE</level>
+  <class>principal.Calculadora</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Se ha hecho una suma</message>
+</record>
+</log>

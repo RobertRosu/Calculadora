@@ -44,7 +44,7 @@ public class Menu {
         boolean ret = false;
         String respuesta;
         do {
-            System.out.print ("�Desea continuar trabajando con la calculadora? [s / n]");
+            System.out.print ("Deseas contiunar trabajando con la calculadora? [s/n]: ");
             respuesta = teclado.next();
         } while (!((respuesta.equalsIgnoreCase("s")) || (respuesta.equalsIgnoreCase("n"))
                     ));

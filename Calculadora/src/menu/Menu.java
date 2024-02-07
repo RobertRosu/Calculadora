@@ -8,6 +8,7 @@ package menu;
  */
 import java.util.Scanner;
 public class Menu {
+	
     private static Scanner teclado = new Scanner(System.in);
     
     public int[] pedirNumeros(){

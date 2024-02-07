@@ -6,9 +6,9 @@ import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import formatter.HTMLFormatter;
 import menu.Menu;
 import operaciones.Operaciones;
+import formatter.HTMLFormatter;
 
 /**
  * @author Robert_Rosu
@@ -17,7 +17,7 @@ import operaciones.Operaciones;
  */
 
 public class Calculadora{
-	private static final Logger LOGGER = Logger.getLogger("Logger operaciones");
+	private static final Logger LOGGER = Logger.getLogger("operaciones.log");
 	
     public static void main(String[] args) throws IOException{ 
     	
@@ -31,9 +31,10 @@ public class Calculadora{
     	LOGGER.addHandler(consoleHandler);
     	
     		try {
-    		fileHandler = new FileHandler("C:/Users/1AW3-18/git/CalculadoraLogging/Calculadora/logs/resultadosCalculadora.html", true);
+    		fileHandler = new FileHandler("C:\\Users\\rober\\git\\Calculadora\\Calculadora\\logs\\resultadosCalculadora.html", true);
     		LOGGER.addHandler(fileHandler);
     		fileHandler.setLevel(Level.ALL);
+    		fileHandler.setFormatter(new HTMLFormatter());
     		} catch (IOException exception) {
     		LOGGER.log(Level.SEVERE, "Error al cargar la configuración",exception);
     		}
@@ -45,23 +46,26 @@ public class Calculadora{
         Menu menu = new Menu();
         Operaciones operaciones = new Operaciones();
         
-        do{ 
+        do{
+            operandos = menu.pedirNumeros();
+            operacion = menu.menuOpciones();
+            
             if (operacion.equalsIgnoreCase("+")){
                 resultado = operaciones.sumar(operandos[0], operandos[1]);
                 System.out.println ("Resultado: " + resultado);
-                LOGGER.log(Level.FINE, "Se ha hecho una suma + : " + operandos[0] + " " + operandos[1] + " " +  resultado);
+                LOGGER.log(Level.FINE, operacion + "," + operandos[0] + "," + operandos[1] + "," + resultado);
             } else if (operacion.equalsIgnoreCase("-")){
                 resultado = operaciones.restar(operandos[0], operandos[1]);
                 System.out.println ("Resultado: " + resultado);
-                LOGGER.log(Level.FINE, "Se ha hecho una resta - : " + operandos[0] + " " + operandos[1] + " " +  resultado);
+                LOGGER.log(Level.FINE, operacion + "," + operandos[0] + "," + operandos[1] + "," + resultado);
             } else if (operacion.equalsIgnoreCase("*")){
                 resultado = operaciones.multiplicar(operandos[0], operandos[1]);
                 System.out.println ("Resultado: " + resultado);
-                LOGGER.log(Level.FINE, "Se ha hecho una multiplicacion * : " + operandos[0] + " " + operandos[1] + " " +  resultado);
+                LOGGER.log(Level.FINE, operacion + "," + operandos[0] + "," + operandos[1] + "," + resultado);
             } else if (operacion.equalsIgnoreCase("/")){
                 try {
                 	resultado = operaciones.dividir(operandos[0], operandos[1]);
-                	LOGGER.log(Level.FINE, "Se ha hecho una division / : " + operandos[0] + " " + operandos[1] + " " +  resultado);
+                	LOGGER.log(Level.FINE, operacion + "," + operandos[0] + "," + operandos[1] + "," + resultado);
                 }catch(ArithmeticException e) {
                 	LOGGER.log(Level.WARNING, "No se puede dividir entre 0");
                 	resultado = 0;
@@ -70,7 +74,7 @@ public class Calculadora{
             } else if (operacion.equalsIgnoreCase("%")){
                 resultado = operaciones.resto(operandos[0], operandos[1]);
                 System.out.println ("Resultado: " + resultado);
-                LOGGER.log(Level.FINE, "Se ha hecho un resto % : " + operandos[0] + " " + operandos[1] + " " +  resultado);
+                LOGGER.log(Level.FINE, operacion + "," + operandos[0] + "," + operandos[1] + "," + resultado);
             } else {
                 System.out.println ("Operacion no valida");
             }

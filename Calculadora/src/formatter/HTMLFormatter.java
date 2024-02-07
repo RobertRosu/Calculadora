@@ -10,30 +10,28 @@ public class HTMLFormatter extends Formatter{
 	@Override
 	public String getHead(Handler h) {
 	return "<HTML>\n "
-			+ "<BODY> \n "
 			+ "<HEAD><LINK rel=\"stylesheet\" href=\"style.css\"></HEAD>\n"
-			+ "<TABLE> \n";
+			+ "<BODY> \n "
+			+ "<TABLE>\n"
+			+ "<TR>\n"
+			+ "<TH>Operacion</TH>"
+			+ "<TH>Operando 1</TH>"
+			+ "<TH>Operando 2</TH>"
+			+ "<TH>Resultado</TH>\n</TR>\n";
 	}
 	@Override
 	public String format(LogRecord record) {
 	String msg = record.getMessage();
-	String[] cadena = msg.split(" ");
+	String[] ret = msg.split(",");
  	return 
-	"<TR>"
-	+ "\n<TH>Operación</TH>\n"
-	+ "<TH>Operando 1</TH>\n"
-	+ "<TH>Operando 2</TH>\n"
-	+ "<TH>Resultado</TH>\n"
-	+ "</TR>\n"
-	
-	+ "<TR>\n<TH>" + cadena[6] + "</TH>\n"
-	+ "<TH>" + cadena[8] + "</TH>\n"
-	+ "<TH>" + cadena[9] + "</TH>\n"
-	+ "<TH>" + cadena[10] + "</TH></TR>\n";
+	 "<TR>\n<TD>" + ret[0] + "</TD>\n"
+	+ "<TD>" + ret[1] + "</TD>\n"
+	+ "<TH>" + ret[2] + "</TD>\n"
+	+ "<TD>" + ret[3] + "</TD></TR>\n";
 	}
 	
 	@Override
 	public String getTail(Handler h) {
-	return " </TABLE>\n</BODY>\n</HTML>\n";
+	return "</BODY>\n</HTML>\n";
 	}
 }
